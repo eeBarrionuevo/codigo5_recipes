@@ -156,6 +156,78 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                const SizedBox(
+                  height: 16.0,
+                ),
+
+                const Text(
+                  "Listado general",
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Color(0xff2F2F2F),
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+
+                //Elementos - Recetas registradas
+
+                Container(
+                  padding: EdgeInsets.all(14.0),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.07),
+                        offset: const Offset(5, 5),
+                        blurRadius: 10,
+                      ),
+                    ],
+                  ),
+                  // height: 400,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(14.0),
+                        child: Image.network(
+                          "https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                          height: 230.0,
+                          width: double.infinity,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 8.0,
+                      ),
+                      Text(
+                        "Este es el título de la receta asddfasd asdsa a asdsadsad asdasda sadasdsa s asdsad",
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff2f2f2f),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 4.0,
+                      ),
+                      Text(
+                        "Esta es la descripción de la receta, y muchas veces es mucho más larga que el título, en este punto indicaremos la descrión  muchas veces es mucho más larga que el título, en este pu",
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xff2f2f2f).withOpacity(0.8),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
