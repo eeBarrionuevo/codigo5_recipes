@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -10,7 +12,18 @@ class HomePage extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(14.0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const Text(
+                  "Mis Recetas",
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(
+                  height: 12.0,
+                ),
                 //Estados TextField: Enabled, Focus, Error, Disable
                 TextField(
                   decoration: InputDecoration(
@@ -20,6 +33,14 @@ class HomePage extends StatelessWidget {
                     contentPadding: const EdgeInsets.symmetric(
                       vertical: 12.0,
                       horizontal: 16.0,
+                    ),
+                    prefixIcon: SvgPicture.asset(
+                      "assets/icons/target.svg",
+                      fit: BoxFit.scaleDown,
+                      colorFilter: const ColorFilter.mode(
+                        Color(0xff69686E),
+                        BlendMode.srcIn,
+                      ),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(50.0),
