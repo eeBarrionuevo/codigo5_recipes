@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.dmSansTextTheme(),
       ),
-      home: Mandarina(),
+      home: HomePage(),
     );
   }
 }
