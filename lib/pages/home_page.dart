@@ -167,6 +167,11 @@ class _HomePageState extends State<HomePage> {
                       recipes.add(model);
 
                       setState(() {});
+
+                      titleController.clear();
+                      descriptionController.clear();
+                      imageController.clear();
+                      // titleController.text = "";
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xffC0E863),

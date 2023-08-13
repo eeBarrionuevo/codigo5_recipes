@@ -14,7 +14,42 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.dmSansTextTheme(),
       ),
-      home: HomePage(),
+      home: Mandarina(),
+    );
+  }
+}
+
+class Mandarina extends StatelessWidget {
+  List<String> names = [];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Hola"),
+      ),
+      body: Column(
+        children: [
+          Text("Listado de Containers"),
+          Container(
+            color: Colors.black,
+            width: double.infinity,
+            height: 200,
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: 10,
+              itemBuilder: (BuildContext context, int pepito) {
+                return Container(
+                  margin: EdgeInsets.all(20.0),
+                  color: Colors.red,
+                  height: 200,
+                );
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
