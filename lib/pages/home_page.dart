@@ -1,3 +1,4 @@
+import 'package:codigo5_recipes/models/recipe_model.dart';
 import 'package:codigo5_recipes/widgets/recipe_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,7 +18,7 @@ class _HomePageState extends State<HomePage> {
 
   TextEditingController imageController = TextEditingController();
 
-  List<Map<String, dynamic>> recipes = [];
+  List<RecipeModel> recipes = [];
 
   @override
   Widget build(BuildContext context) {
@@ -151,13 +152,19 @@ class _HomePageState extends State<HomePage> {
                   height: 48.0,
                   child: ElevatedButton(
                     onPressed: () {
-                      Map<String, dynamic> recipe = {
-                        "title": titleController.text,
-                        "description": descriptionController.text,
-                        "image": imageController.text,
-                      };
+                      // Map<String, dynamic> recipe = {
+                      //   "title": titleController.text,
+                      //   "description": descriptionController.text,
+                      //   "image": imageController.text,
+                      // };
 
-                      recipes.add(recipe);
+                      RecipeModel model = RecipeModel(
+                        title: titleController.text,
+                        description: descriptionController.text,
+                        image: imageController.text,
+                      );
+
+                      recipes.add(model);
 
                       setState(() {});
                     },
@@ -195,10 +202,7 @@ class _HomePageState extends State<HomePage> {
 
                 ...recipes
                     .map(
-                      (e) => RecipeItem(
-                        // title: e["title"],
-                        // description: e["description"],
-                        // image: e["image"],
+                      (RecipeModel e) => RecipeItem(
                         data: e,
                       ),
                     )
