@@ -172,66 +172,97 @@ class HomePage extends StatelessWidget {
 
                 //Elementos - Recetas registradas
 
-                Container(
-                  padding: EdgeInsets.all(14.0),
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(16.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.07),
-                        offset: const Offset(5, 5),
-                        blurRadius: 10,
-                      ),
-                    ],
-                  ),
-                  // height: 400,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(14.0),
-                        child: Image.network(
-                          "https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                          height: 230.0,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 8.0,
-                      ),
-                      Text(
-                        "Este es el título de la receta asddfasd asdsa a asdsadsad asdasda sadasdsa s asdsad",
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xff2f2f2f),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 4.0,
-                      ),
-                      Text(
-                        "Esta es la descripción de la receta, y muchas veces es mucho más larga que el título, en este punto indicaremos la descrión  muchas veces es mucho más larga que el título, en este pu",
-                        maxLines: 3,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xff2f2f2f).withOpacity(0.8),
-                        ),
-                      ),
-                    ],
-                  ),
+                RecipeItem(
+                  title: "Rocoto Relleno",
+                  description:
+                      "El rocoto relleno es el emblema gastronómico arequipeño por excelencia y también un símbolo del mestizaje cultural del Perú, pues combina insumos originarios de los Andes, así como aquellos traídos por los europeos hace 500 años.",
+                  image:
+                      "https://comeperuano.b-cdn.net/wp-content/uploads/2020/04/receta-rocoto-relleno..jpg",
+                ),
+                RecipeItem(
+                  title: "Ceviche",
+                  description:
+                      "El Ceviche de pescado peruano es el plato tradicional por excelencia en el Perú. Los peruanos lo consideramos nuestro plato bandera y nos sentimos especialmente orgullosos de él.",
+                  image:
+                      "https://cdn0.recetasgratis.net/es/posts/7/4/1/ceviche_peruano_18147_600_square.jpg",
                 ),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class RecipeItem extends StatelessWidget {
+  String title;
+  String description;
+  String image;
+
+  RecipeItem({
+    required this.title,
+    required this.description,
+    required this.image,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 12),
+      padding: const EdgeInsets.all(14.0),
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.07),
+            offset: const Offset(5, 5),
+            blurRadius: 10,
+          ),
+        ],
+      ),
+      // height: 400,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(14.0),
+            child: Image.network(
+              image,
+              height: 230.0,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
+          ),
+          const SizedBox(
+            height: 8.0,
+          ),
+          Text(
+            title,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontSize: 18.0,
+              fontWeight: FontWeight.w600,
+              color: Color(0xff2f2f2f),
+            ),
+          ),
+          const SizedBox(
+            height: 4.0,
+          ),
+          Text(
+            description,
+            maxLines: 3,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontSize: 14.0,
+              fontWeight: FontWeight.w400,
+              color: Color(0xff2f2f2f).withOpacity(0.8),
+            ),
+          ),
+        ],
       ),
     );
   }
