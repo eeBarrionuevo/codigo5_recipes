@@ -196,9 +196,10 @@ class _HomePageState extends State<HomePage> {
                 ...recipes
                     .map(
                       (e) => RecipeItem(
-                        title: e["title"],
-                        description: e["description"],
-                        image: e["image"],
+                        // title: e["title"],
+                        // description: e["description"],
+                        // image: e["image"],
+                        data: e,
                       ),
                     )
                     .toList(),
